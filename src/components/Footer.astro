@@ -1,0 +1,56 @@
+
+<div class="color-strip">
+    {Array.from({ length: 5 }).map(() => (
+        <div class="color-rectangle" style="background-color: var(--blue-light);"></div>
+        <div class="color-rectangle" style="background-color: var(--pink);"></div>
+        <div class="color-rectangle" style="background-color: var(--green);"></div>
+        <div class="color-rectangle" style="background-color: var(--orange);"></div>
+    ))}
+</div>
+
+<footer transition:name="footer">
+    <div class="left-col">
+        <img src="/images/logo.png" alt="Logo" width="100" height="100">
+    </div>
+    <div class="mid-col">
+        <p style="color: var(--secondary-color);">AVISO LEGAL / POLÍTICA DE PRIVACIDAD / POLÍTICA DE COOKIES / NORMATIVA / CONDICIONES</p>
+    </div>
+    <div class="right-col">
+        <p>ESN Madrid UPM is part of ESN Madrid</p>
+        <img src="/images/esn-logo-white.png" alt="Logo" height="100">
+    </div>
+</footer>
+
+<style>
+    .color-strip {
+        display: flex;
+        height: 5px;
+        width: 100%;
+    }
+
+    .color-rectangle {
+        flex: 1;
+    }
+    
+    footer {
+        background-color: var(--primary-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5rem;
+        padding: 2rem;
+    }
+
+    .right-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        color: #ffffff;
+    }
+
+    .right-col p {
+        color: #ffffff;;
+    }
+
+</style>

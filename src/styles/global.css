@@ -1,0 +1,86 @@
+:root {
+  /* Font Options */
+  --h1: clamp(1.5rem, 4vw, 1.85rem);
+  --h2: clamp(1.2rem, 3vw, 1.25rem);
+  --h3: clamp(1rem, 2vw, 1.125rem);
+
+  --p: clamp(0.8rem, 1.6vw, 1rem);
+  --p-spacing: 0.95px;
+  --p-line-h: 175%;
+
+  --navbar-desktop: 20px;
+  --navbar-mobile: 16px;
+
+  /* Colors */
+  --background : #ffffff;
+
+  --primary-color: #1D1D1B;
+  --secondary-color: #a7a7a7;
+
+  --blue-light: #00AEF0;
+  --blue-dark: #2E3192;
+  --green: #7BC143;
+  --pink: #EC008C;
+  --orange: #F57B20;
+  --gray: #333333;
+
+}
+
+
+@font-face {
+  font-family: 'Albra Grotesk Regular';
+  font-weight: 200 800;
+  src: url('../fonts/Albra Grotesk Regular-Traced-Web.ttf') format('truetype');
+}
+
+
+* {
+  font-family: Albra Grotesk Regular, sans-serif;
+}
+
+html {
+  background-color: var(--background);
+  font-optical-sizing: auto;
+}
+
+/* ------- Common elements ------- */
+h1 {
+  font-size: var(--h1);
+  font-weight: 600;
+}
+
+h2 {
+  font-size: var(--h2);
+  font-weight: 500;
+}
+
+h3 {
+  font-size: var(--h3);
+  font-weight: 400;
+}
+
+p{
+  font-size: var(--p);
+  font-weight: 300;
+}
+
+li {
+  font-size: var(--p);
+  line-height: var(--p-line-h);
+  letter-spacing: var(--p-spacing);
+  font-weight: 400;
+}
+
+a {text-decoration: none;}
+
+
+.gradient-font {
+  background: -webkit-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(100, 100, 100, 1) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
