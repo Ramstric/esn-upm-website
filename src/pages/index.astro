@@ -2,54 +2,92 @@
 import '../styles/global.css'
 
 import StandardLayout from '../layouts/StandardLayout.astro';
+import Button from '../components/Button.astro';
 ---
 
 <StandardLayout pageTitle="Home">
-		
-				
 	<div class="hero">
-		<div class="left-image">
-			<img src="https://placehold.co/400x450" alt="ESN Madrid UPM">
-		</div>
-		<div class="middle-text">
+		<div class="hero-img">
 			<h1>ESN Madrid UPM</h1>
+		</div>
+
+		<div class="hero-description">
 			<p>
 				Erasmus Student Network (ESN) es una de las mayores asociaciones de estudiantes sin ánimo de lucro en Europa, fundada en 1989 para la ayuda y el desarrollo del intercambio de estudiantes. 
 				<br><br>
 				Estamos presentes en 520 Instituciones de 42 países.
 			</p>
-		</div>
-		<div class="right-image">
-			<img src="https://placehold.co/400x450" alt="ESN Madrid UPM">
+
+			<Button innerHtml="<p> More about us... </p>" type="invert" link="/" bgcolor="var(--background)" labelcolor="var(--primary-color)"/>
 		</div>
 	</div>
 
 	<div class="first-steps">
-		<div class="centered-blur"> 
-			<h2>Primeros pasos</h2>
+		<div class="centered-blur">
 			<p>
-				¿Eres un estudiante de intercambio en la UPM? ¿Quieres conocer a gente nueva y descubrir Madrid? ¡Estás en el lugar correcto! 
-				<br><br>
-				En ESN Madrid UPM organizamos eventos y actividades para que puedas disfrutar de tu estancia en Madrid al máximo. 
-				<br><br>
-				¡Descubre cómo puedes unirte a nosotros!
+				¡No olvides echar un vistazo a nuestra guía de primeros pasos para estudiantes internacionales!
 			</p>
+			<Button innerHtml="<h3>¡Primeros pasos!</h3>" type="invert" bgcolor="var(--orange)" labelcolor="var(--background)"/>
 		</div>
 	</div>
 
+	<div class="esncard">
+		<h3>
+			Únete a la comunidad Erasmus y consigue tu ESNcard
+		</h3>
 
-	<div class="map-esncard">
-		<div class="map">
+		<img src="/images/esncard-2.png" height="325" alt="ESN Madrid UPM">
+
+		<p>
+			La tarjeta de membresía de la Red de Estudiantes Erasmus te da acceso a todas las actividades que ofrece ESN...
+		</p>
+
+		<div class="discounts">
+			<img src="/images/descuento-1.png" width="100" alt="Descuento 1">
+			<img src="/images/descuento-2.png" width="100" alt="Descuento 2">
+			<img src="/images/descuento-3.png" width="100" alt="Descuento 3">
+			<img src="/images/descuento-4.png" width="100" alt="Descuento 4">
 		</div>
-		<div class="esncard">
+
+		<p>
+			...y cientos de descuentos en toda Europa durante 12 meses!
+		</p>
+
+		<div class="esncard-btns">
+			<Button innerHtml="<p>¡Consíguela ya!</p>" type="invert" bgcolor="var(--primary-color)" labelcolor="white"/>
+			<Button innerHtml="<p>Horarios de oficina</p>" type="invert" bgcolor="white" labelcolor="var(--primary-color)"/>
 		</div>
 	</div>
 
-	<div class="contact-calendar">
-		<div class="contact">
+	<div class="map">
+		<div class="marker-tab">
+			<img src="/images/marker.svg" width="24" alt="Marker icon">
+			<p>We are here</p>
 		</div>
-		<div class="calendar">
+
+		<div class="map-embed">
+			<iframe src="https://www.google.com/maps/embed?origin=mfe&amp;pb=!1m4!2m1!1sEscuela+T%C3%A9cnica+Superior+de+Edificaci%C3%B3n+UPM%2C+Ciudad+Universitaria%2C+Av.+de+Juan+de+Herrera%2C+6%2C+28040+Madrid!5e0!6i14!5m1!1sen" style="border:0;" loading="lazy"></iframe>
 		</div>
+	</div>
+
+	<div class="events">
+		<div class="events-description">
+			<h3>¿Estás listo para divertirte?</h3>
+			<p>¡Recuerda revisar el calendario de eventos para que no te pierdas niguno!</p>
+			
+			<Button innerHtml="<p>¡Llevame al calendario de eventos!</p>" type="invert" bgcolor="#532AFF" labelcolor="white"/>
+			
+			<p>Tambien recuerda seguirnos en nuestras redes sociales. ¡Siempre que lo necesites, puedes mandarnos mensaje!</p>
+			
+			<div class="socials">
+				<img src="/images/instagram.svg" width="40" alt="Instagram">
+				<img src="/images/facebook.svg" width="40" alt="Facebook">
+				<img src="/images/twitter-x.svg" width="40" alt="Twitter X">
+				<img src="/images/mail.svg" width="40" alt="Mail">
+			</div>
+		</div>
+
+		<img src="/images/esnpeople.png" height="340" alt="ESN People">
 	</div>
 
 
@@ -59,79 +97,198 @@ import StandardLayout from '../layouts/StandardLayout.astro';
 
 <style>
 	.hero {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
 		width: 100%;
+		height: 660px;
+
 		background-color: var(--primary-color);
-		height: 450px;
+	}
+
+	.hero-img {
+		width: 100%;
+		height: 412px;
+
+		background-image: url('/images/hero.png');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
 
 		display: flex;
-		flex-direction: row;
+		align-items: flex-end;
 		justify-content: center;
-		align-items: center;
+	}
 
-		gap: 1rem;
+	.hero-img h1 {
+		color: white;
+		text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+	}
+
+	.hero-description {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+        box-sizing: border-box;
+
+		width: 100%;
+		height: 248px;
+		padding: 0 15px;
+		gap: 25px;
 
 		text-align: center;
 
-		color: #ffffff;
+		color: white;
 	}
 
+
+
 	.first-steps {
-		width: 100%;
-		background-image: url('/images/welcome-banner.png');
+		background-image: url('/images/welcome-banner-cropped.png');
 		background-size: cover;
-		height: 397px;
+		background-position: center;
+		box-sizing: border-box;
+
+		width: 100%;
+		height: 300px;
 
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 
-		gap: 1rem;
-
-		text-align: center;
-
-		color: var(--primary-color);
+		border: 4px solid var(--orange);
 	}
 
 	.centered-blur {
-		background: linear-gradient(0.25turn, #a0e6ff9d, #ffb78482);
-		backdrop-filter: blur(30px);
-		padding: 1rem;
-		width: 100%;
-	}
-
-	.map-esncard {
-		width: 100%;
-		height: 400px;
-
 		display: flex;
-		flex-direction: row;
-		justify-content: center;
+		flex-direction: column;
 		align-items: center;
+		box-sizing: border-box;
+
+		padding: 20px 25px;
+		width: 100%;
+		gap: 25px;
+
+		text-align: center;
+
+		backdrop-filter: blur(30px);
 	}
 
-	.map {
-		width: 50%;
-		height: 100%;
-		background: var(--pink);
-	}
+
 
 	.esncard {
-		width: 50%;
-		height: 100%;
-		background: #C3EFFF;
-	}
-
-	.contact-calendar {
 		width: 100%;
-		height: 550px;
+		height: 850px;
 
 		display: flex;
-		flex-direction: row;
-		justify-content: center;
+		flex-direction: column;
 		align-items: center;
+		justify-content: center;
 
-		background: #E9D4FF;
+		box-sizing: border-box;
+		gap: 30px;
+		padding: 0 20px;
+		
+		background-color: #C3EFFF;
+
+		text-align: center;
+	}
+
+	.discounts {
+		display: flex;
+		justify-content: center;
+	}
+
+	.discounts > * {
+		margin-left: -20px;
+		box-shadow: 0px 0px 12px 2px black;
+	}
+
+	.esncard-btns {
+		display: flex;
+		gap: 20px;
+	}
+
+
+
+	.map {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		width: 100%;
+
+		background-color: #C3EFFF;
+	}
+
+	.marker-tab {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		height: 40px;
+		padding: 0 45px 20px 45px;
+
+		border-radius: 25px;
+
+		background-color: var(--pink);
+		color: white;
+	}
+
+	.map-embed {
+		box-sizing: border-box;
+		margin-top: -20px;
+
+		width: 100%;
+		height: 300px;
+
+		border: 5px solid var(--pink);
+	}
+
+	.map-embed iframe {
+		width: 100%;
+		height: 100%;
+	}
+
+
+	.events {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		height: 800px;
+
+		
+		gap: 50px;
+		padding-top: 100px;
+
+		background-color: #D6CBFF;
+	}
+
+	.events-description {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		gap: 30px;
+
+		padding: 0 30px;
+	}
+
+	.socials {
+		display: flex;
+		justify-content: space-between;
+		box-sizing: border-box;
+
+		width: 100%;
+		padding: 0 25px;
 	}
 
 </style>

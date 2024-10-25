@@ -1,6 +1,6 @@
 
 <div class="color-strip">
-    {Array.from({ length: 3 }).map(() => (
+    {Array.from({ length: 5 }).map(() => (
         <div class="color-rectangle" style="background-color: var(--blue-light);"></div>
         <div class="color-rectangle" style="background-color: var(--pink);"></div>
         <div class="color-rectangle" style="background-color: var(--green);"></div>
@@ -9,21 +9,19 @@
 </div>
 
 <footer transition:name="footer">
-    <div class="upm-esn-logos">
-        <img src="/images/logo-upm.svg" width="150" alt="Logo UPM">
-    
-        <div class="esn-logo">
-            <p>ESN Madrid UPM is part of ESN Madrid Erasmus</p>
-            <img src="/images/esn-logo-white.png" width="135" alt="Logo">
-        </div>
+    <div class="left-col">
+        <img src="/images/logo-upm.svg" alt="Logo">
     </div>
-
-    <div class="legal-text">
+    <div class="mid-col">
         <a>AVISO LEGAL</a>
         <a>POLÍTICA DE PRIVACIDAD</a>
         <a>POLÍTICA DE COOKIES</a>
         <a>NORMATIVA</a>
         <a>CONDICIONES</a>
+    </div>
+    <div class="right-col">
+        <p>ESN Madrid UPM is part of ESN Madrid Erasmus</p>
+        <img src="/images/esn-logo-white.png" alt="Logo">
     </div>
 </footer>
 
@@ -34,56 +32,56 @@
         width: 100%;
     }
 
-    .color-rectangle {flex: 1;}
+    .color-rectangle {
+        flex: 1;
+    }
     
     footer {
+        background-color: var(--primary-color);
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
+        gap: 5em;
+        padding: 1rem 2.5rem;
 
-        height: 195px;
-        gap: 30px;
-
-        background-color: var(--primary-color);
-
+        height: 12vw;
     }
 
-    .legal-text {
-        display: inline-block;
-        text-align: center;
-
-        width: 100%;
-
-        color: white;
+    footer * {
+        font-weight: 350;
     }
 
-    .upm-esn-logos {
-        display: flex;
+    .left-col {
+        height: 100%;
         align-items: center;
-        justify-content: space-between;
-        box-sizing: border-box;
-        
-        height: fit-content;
-        width: 100%;
-
-        padding: 0 10px;
+        display: flex;
     }
 
-    .esn-logo {
+    img {
+        height: 50%;
+    }
+
+    .right-col {
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        height: 100%;
+    }
 
-        width: 135px;
-        gap: 5px;
+    .right-col p {
+        color: #ffffff;
+    }
 
-        color: white;
-        text-align: right;
+    .mid-col {
+        text-align: center;
+        color: var(--blue-light);
     }
 
     a::after {
         color: #ffffff;
         content: " | ";
     }
+
 </style>

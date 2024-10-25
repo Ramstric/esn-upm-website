@@ -1,15 +1,37 @@
+@font-face {
+  font-family: 'Work Sans';
+  font-weight: 100 900;
+  src: url('../fonts/WorkSans-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  font-weight: 100 900;
+  font-style: italic;
+  src: url('../fonts/WorkSans-Italic-VariableFont_wght.ttf') format('truetype');
+}
+
+pink{color:var(--pink);}
+
 :root {
   /* Font Options */
-  --h1: clamp(1.5rem, 4vw, 1.85rem);
-  --h2: clamp(1.2rem, 3vw, 1.25rem);
-  --h3: clamp(1rem, 2vw, 1.125rem);
+  --h1: clamp(1.5rem, 0rem + 3.2vw, 3rem);
+  --h1-mobile: 46px;
 
-  --p: clamp(0.8rem, 1.6vw, 1rem);
-  --p-spacing: 0.95px;
-  --p-line-h: 175%;
+  --h2: clamp(0.75rem, 0rem + 1.6vw, 1.5rem);
+  --h3: clamp(0.625rem, 0rem + 1.333vw, 1.25rem);
+  --h3-mobile: 18px;
 
-  --navbar-desktop: 20px;
-  --navbar-mobile: 16px;
+  --p: clamp(0.5rem, 0rem + 1.067vw, 1rem);
+  --p-mobile: 15px;
+
+  --navbar: clamp(0.563rem, 0rem + 1.2vw, 1.125rem);
+  
+  --btn-mobile: 10px;
+
+
+  --footer: clamp(0.438rem, 0rem + 0.933vw, 0.875rem);
+  --footer-mobile: 10px;
 
   /* Colors */
   --background : #ffffff;
@@ -23,55 +45,66 @@
   --pink: #EC008C;
   --orange: #F57B20;
   --gray: #333333;
-
 }
 
-
-@font-face {
-  font-family: 'Albra Grotesk Regular';
-  font-weight: 200 800;
-  src: url('../fonts/Albra Grotesk Regular-Traced-Web.ttf') format('truetype');
-}
-
+/* ------- Common elements ------- */
 
 * {
-  font-family: Albra Grotesk Regular, sans-serif;
+  font-family: Work Sans, serif;
+  font-weight: 450;
 }
 
 html {
   background-color: var(--background);
   font-optical-sizing: auto;
+  /*overflow-x: hidden;*/
+  overflow-x: hidden;
 }
 
-/* ------- Common elements ------- */
+
+
 h1 {
-  font-size: var(--h1);
-  font-weight: 600;
+  font-size: var(--h1-mobile);
+  font-weight: 500;
+  margin: 0;
 }
 
 h2 {
   font-size: var(--h2);
-  font-weight: 500;
 }
 
 h3 {
-  font-size: var(--h3);
+  font-size: var(--h3-mobile);
   font-weight: 400;
+  margin: 0;
 }
+
+
 
 p{
-  font-size: var(--p);
+  font-size: var(--p-mobile);
   font-weight: 300;
+  margin: 0;
 }
 
-li {
-  font-size: var(--p);
-  line-height: var(--p-line-h);
-  letter-spacing: var(--p-spacing);
-  font-weight: 400;
+
+
+nav {
+  font-size: var(--navbar);
+}
+
+footer *{
+  font-size: var(--footer-mobile);
+  font-weight: 350;
+}
+
+i {
+  font-weight: bold;
 }
 
 a {text-decoration: none;}
+
+
 
 
 .gradient-font {

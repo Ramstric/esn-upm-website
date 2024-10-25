@@ -1,11 +1,10 @@
 ---
-const { label, bgcolor, labelcolor, type, w, h, iconID, link} = Astro.props;
+const { innerHtml, bgcolor, labelcolor, type, w, h, iconID, link} = Astro.props;
 
 const buttonType = `custom-btn ${type}`;
 ---
 
-<a class={buttonType} href={link} target="_blank">
-    {label}
+<a set:html={innerHtml} class={buttonType} href={link} target="_blank">
     {iconID ? iconID && <svg ><use href={iconID} /></svg> : null}
 </a>
 
@@ -13,24 +12,29 @@ const buttonType = `custom-btn ${type}`;
 
 <style define:vars={{ bgcolor: bgcolor, labelcolor: labelcolor, w: w, h: h }}>
     .custom-btn {
-        display: flex;
-        justify-content: space-between;
+        display: inline-flex;
+        justify-content: center;
         align-items: center;
+
+        width: fit-content;
+        height: fit-content;
+        padding: 10px 20px;
+
         background: var(--bgcolor);
         color: var(--labelcolor);
+
         border: none;
-        border-radius: 24px;
-        padding: 0.25rem 1rem;
+        border-radius: 25px;
+        
         cursor: pointer;
-
-        width: var(--w);
-        height: var(--h);
-
-        transition: all 0.25s ease;
-
-        font-size: 1rem;
-
         text-decoration: none;
+        transition: all 0.25s ease;
+    }
+ 
+    .normal-font{
+       font-size: var(--btn-mobile);
+       font-weight: 500;
+       margin: 0;
     }
 
     svg {
@@ -51,7 +55,6 @@ const buttonType = `custom-btn ${type}`;
     }
 
     .normal:hover {
-        box-shadow: 0 0 20px 5px black;
+        box-shadow: 0px 0px 10px 2px rgb(0, 0, 0);
     }
-    
 </style>

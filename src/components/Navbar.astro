@@ -1,47 +1,26 @@
 ---
 import Button from './Button.astro'
 ---
+
 <div class="color-strip">
-    {Array.from({ length: 5 }).map(() => (
+    {Array.from({ length: 3 }).map(() => (
         <div class="color-rectangle" style="background-color: var(--blue-light);"></div>
         <div class="color-rectangle" style="background-color: var(--pink);"></div>
         <div class="color-rectangle" style="background-color: var(--green);"></div>
         <div class="color-rectangle" style="background-color: var(--orange);"></div>
     ))}
 </div>
+
 <nav class="nav">
-    <div class="logo">
-        <a href="/" >
-            <img src="/images/esn-logo.png" alt="Logo" width="280" height="140">
-        </a>
-    </div>
+    
+    <a href="/" >
+        <img id="esnLogo" src="/images/esn-logo.png" width="135" alt="Logo ESN">
+    </a>
 
-    <div class="pages">
-        <a href="/" >Home</a>
-        <a href="/resume/">First Steps</a>
-        <a href="/projects/">ESNcard</a>
-        <a href="/blog/">Eventos</a>
-        <a href="/blog/">Documentos</a>
-        <Button label="¡Quiero ser voluntario!" type="normal" h="30px" link="/" bgcolor="var(--primary-color)" labelcolor="var(--background)"/>
-    </div>
-
-    <div class="lang-icons">
-        <a href="/es/">
-            <img src="/images/spain.png" alt="Español" width="30" height="30">
-        </a>
-        <a href="/en/">
-            <img src="/images/uk.png" alt="English" width="30" height="30">
-        </a>
-        <a href="/en/">
-            <img src="/images/cataluna.png" alt="English" width="30" height="30">
-        </a>
-        <a href="/en/">
-            <img src="/images/vasco.png" alt="English" width="30" height="30">
-        </a>
-        <a href="/en/">
-            <img src="/images/galicia.png" alt="English" width="30" height="30">
-        </a>
-    </div>
+    
+    <a href="/es/">
+        <img src="/images/spain.png" alt="Español" height="48">
+    </a>
 </nav>
 
 <!-- ------ Local style ------ -->
@@ -58,50 +37,21 @@ import Button from './Button.astro'
     }
 
     nav {
-        background-color: #ffffff;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        
-        padding: 1rem 4rem;
 
-        font-size: var(--navbar-mobile);
+        height: fit-content;
+        padding: 0 10px;
+
+        background-color: #ffffff;
 
         box-shadow: 0 4px 30px 0px rgba(0, 0, 0, 0.8);
     }
-
-    .nav a {
-        text-decoration: none;
-        color: var(--secondary-color);
-
-        transition: color .2s ease;
-    }
-
-    .nav a:hover {
-        color: var(--primary-color);
-    }
-
-    .pages {
-        display: flex;
-        flex-direction: row;
-        gap: 2rem;
-    }
-
-    .lang-icons {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        max-width: 170px;
-        justify-content: center;
-        gap: 2rem;
-        row-gap: 0;
-    }
-
-    @media screen and (min-width: 636px) {
-        .nav {
-            font-size: var(--navbar-desktop);
-        }
+  
+    #esnLogo {
+        width: 135px;
     }
 </style>
 
