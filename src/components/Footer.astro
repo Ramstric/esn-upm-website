@@ -10,11 +10,11 @@
 
 <footer transition:name="footer">
     <div class="upm-esn-logos">
-        <img src="/images/logo-upm.svg" width="150" alt="Logo UPM">
+        <img id="upm-logo" src="/images/logo-upm.svg" alt="Logo UPM">
     
         <div class="esn-logo">
             <p>ESN Madrid UPM is part of ESN Madrid Erasmus</p>
-            <img src="/images/esn-logo-white.png" width="135" alt="Logo">
+            <img id="esn-logo-white" src="/images/esn-logo-white.png" alt="Logo">
         </div>
     </div>
 
@@ -58,6 +58,10 @@
         color: white;
     }
 
+    .legal-text a {
+        color: var(--blue-light);
+    }
+
     .upm-esn-logos {
         display: flex;
         align-items: center;
@@ -85,5 +89,32 @@
     a::after {
         color: #ffffff;
         content: " | ";
+    }
+
+    #upm-logo {
+        width: 150px;
+    }
+
+    #esn-logo-white {
+        width: inherit;
+    }
+
+    @media (min-width: 450px) {
+        footer{
+            height: 295px;
+        }
+        #upm-logo {
+            width: 300px;
+        }
+        .upm-esn-logos {
+            padding: 0 50px;
+        }
+        .esn-logo {
+            width: 230px;
+        }
+        #esn-logo-white {
+            width: inherit;
+        }
+
     }
 </style>

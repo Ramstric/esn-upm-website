@@ -11,29 +11,46 @@
   src: url('../fonts/WorkSans-Italic-VariableFont_wght.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Crimson Text';
+  font-weight: normal;
+  src: url('../fonts/CrimsonText-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-weight: normal;
+  src: url('../fonts/IBMPlexMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Pacifico';
+  font-weight: normal;
+  src: url('../fonts/Pacifico-Regular.ttf') format('truetype');
+}
+
 pink{color:var(--pink);}
 
 :root {
-  /* Font Options */
-  --h1: clamp(1.5rem, 0rem + 3.2vw, 3rem);
-  --h1-mobile: 46px;
+  /* --------------- Desktop Font Options --------------- */
+  --h1-desktop: clamp(2.875rem, 2.4rem + 0.816vw, 3.625rem); /* 58px to 46px */
+  --h3-desktop: clamp(1.125rem, 0.6rem + 0.408vw, 1.5rem);    /* 24px to 18px */
 
-  --h2: clamp(0.75rem, 0rem + 1.6vw, 1.5rem);
-  --h3: clamp(0.625rem, 0rem + 1.333vw, 1.25rem);
-  --h3-mobile: 18px;
-
-  --p: clamp(0.5rem, 0rem + 1.067vw, 1rem);
-  --p-mobile: 15px;
-
-  --navbar: clamp(0.563rem, 0rem + 1.2vw, 1.125rem);
+  --p-desktop: clamp(0.938rem, 0.823rem + 0.408vw, 1.313rem);  /* 21px to 15px */
   
-  --btn-mobile: 10px;
+  --footer-desktop: clamp(0.625rem, 0.51rem + 0.408vw, 1rem);  /* 16px to 10px */
+
+  /* ------- Mobile Font Options - 450px to 320px ------- */
+  
+  --h1-mobile: clamp(2.25rem, 0.712rem + 7.692vw, 2.875rem);      /* 46px to 36px */
+  --h3-mobile: clamp(0.875rem, 0.6rem + 3.077vw, 1.125rem);      /* 18px to 14px */
+
+  --p-mobile: clamp(0.688rem, 0.072rem + 3.077vw, 0.938rem);      /* 15px to 11px */
+
+  --footer-mobile: clamp(0.563rem, 0.409rem + 0.769vw, 0.625rem); /* 10px to  9px */
 
 
-  --footer: clamp(0.438rem, 0rem + 0.933vw, 0.875rem);
-  --footer-mobile: 10px;
-
-  /* Colors */
+  /* ---------------------- Colors ---------------------- */
   --background : #ffffff;
 
   --primary-color: #1D1D1B;
@@ -43,11 +60,12 @@ pink{color:var(--pink);}
   --blue-dark: #2E3192;
   --green: #7BC143;
   --pink: #EC008C;
+  --purple: #532AFF;
   --orange: #F57B20;
   --gray: #333333;
 }
 
-/* ------- Common elements ------- */
+/* ------------------ Common elements ------------------ */
 
 * {
   font-family: Work Sans, serif;
@@ -64,8 +82,8 @@ html {
 
 
 h1 {
-  font-size: var(--h1-mobile);
-  font-weight: 500;
+  font-size: var(--h1);
+  font-weight: 400;
   margin: 0;
 }
 
@@ -74,7 +92,7 @@ h2 {
 }
 
 h3 {
-  font-size: var(--h3-mobile);
+  font-size: var(--h3);
   font-weight: 400;
   margin: 0;
 }
@@ -82,19 +100,30 @@ h3 {
 
 
 p{
-  font-size: var(--p-mobile);
+  font-size: var(--p);
   font-weight: 300;
   margin: 0;
 }
 
+p-btn{
+  font-size: var(--p);
+  font-weight: 500;
+  margin: 0;
+}
+
+p-btn > *{
+  font-size: var(--p);
+  font-weight: 500;
+  margin: 0;
+}
 
 
 nav {
-  font-size: var(--navbar);
+  font-size: var(--h3-desktop);
 }
 
 footer *{
-  font-size: var(--footer-mobile);
+  font-size: var(--footer);
   font-weight: 350;
 }
 
@@ -102,9 +131,42 @@ i {
   font-weight: bold;
 }
 
-a {text-decoration: none;}
+a {text-decoration: none; color: #9d9d9d;transition: all 0.25s ease;}
 
 
+@media (min-width: 451px) {
+  h1 { font-size: var(--h1-desktop); }
+  h3 { font-size: var(--h3-desktop); }
+
+  p { font-size: var(--p-desktop); }
+  
+  footer * { font-size: var(--footer-desktop); }
+}
+@media (max-width: 450px) {
+  h1 { font-size: var(--h1-mobile); }
+  h3 { font-size: var(--h3-mobile); }
+
+  p { font-size: var(--p-mobile); }
+
+  .btn { font-size: var(--btn-mobile); }
+  footer * { font-size: var(--footer-mobile); }
+}
+
+crimson{font-family: 'Crimson Text', serif;}
+crimson > *{font-family: 'Crimson Text', serif;}
+
+pacifico{font-family: 'Pacifico', cursive;}
+pacifico > *{font-family: 'Pacifico', cursive;}
+
+ibm{font-family: 'IBM Plex Mono', monospace;}
+ibm > *{font-family: 'IBM Plex Mono', monospace;}
+
+blue {color: var(--blue-light);}
+green {color: var(--green);}
+orange {color: var(--orange);}
+pink {color: var(--pink);}
+purple {color: var(--purple);}
+gray {color: var(--gray);}
 
 
 .gradient-font {
