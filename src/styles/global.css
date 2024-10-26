@@ -1,32 +1,32 @@
 @font-face {
   font-family: 'Work Sans';
   font-weight: 100 900;
-  src: url('../fonts/WorkSans-VariableFont_wght.ttf') format('truetype');
+  src: url('/esn-upm-website/fonts/WorkSans-VariableFont_wght.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Work Sans';
   font-weight: 100 900;
   font-style: italic;
-  src: url('../fonts/WorkSans-Italic-VariableFont_wght.ttf') format('truetype');
+  src: url('/esn-upm-website/fonts/WorkSans-Italic-VariableFont_wght.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Crimson Text';
   font-weight: normal;
-  src: url('../fonts/CrimsonText-Regular.ttf') format('truetype');
+  src: url('/esn-upm-website/fonts/CrimsonText-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'IBM Plex Mono';
   font-weight: normal;
-  src: url('../fonts/IBMPlexMono-Regular.ttf') format('truetype');
+  src: url('/esn-upm-website/fonts/IBMPlexMono-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Pacifico';
   font-weight: normal;
-  src: url('../fonts/Pacifico-Regular.ttf') format('truetype');
+  src: url('/esn-upm-website/fonts/Pacifico-Regular.ttf') format('truetype');
 }
 
 pink{color:var(--pink);}
