@@ -1,0 +1,69 @@
+
+
+<div id="lang-selector">
+    <ul>
+      <li> <p>SP</p> <img src="https://cdn.countryflags.com/thumbs/spain/flag-square-250.png"> </li>
+      
+      <li> <p>SP</p> <img src="https://cdn.countryflags.com/thumbs/spain/flag-square-250.png"> </li>
+      <li> <p>EN</p> <img src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-square-250.png"> </li>
+      <li> <p>FR</p> <img src="https://cdn.countryflags.com/thumbs/france/flag-square-250.png"> </li>
+      <li> <p>JP</p> <img src="https://cdn.countryflags.com/thumbs/japan/flag-square-250.png"> </li>
+    </ul>
+</div>
+
+<style>
+    #lang-selector {
+        width: 55px;
+        max-height: 25px;
+        
+        padding: 5px 5px;
+        border-radius: 40px;
+        
+        overflow: hidden;
+        
+        color: black;
+        background-color: white;
+        
+        box-shadow: 0px 8px 8px rgba(79, 104, 113, 0.30);
+        transition: all .25s ease-in-out;
+    }
+
+    #lang-selector li {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        
+        width: 100%;
+        margin-bottom: 10px;
+        
+        border-radius: 25px;
+        
+        background-color: white;
+        transition: all .1s ease-in-out;
+        
+        list-style: none;
+    }
+
+    #lang-selector img {
+        width: 25px;
+        height: 25px;
+        
+        border-radius: 50%;
+    }
+
+    #lang-selector:hover {
+        max-height: 170px;
+        
+        border-radius: 20px;
+    }
+
+    #lang-selector li:not(:first-child):hover {
+        background-color: rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+    }
+
+    ul {
+        padding: 0;
+        margin: 0;
+    }
+</style>

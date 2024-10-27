@@ -1,5 +1,6 @@
 ---
 import Button from './Button.astro'
+import Language from './Language.astro'
 
 const repo = "/esn-upm-website"
 ---
@@ -29,7 +30,7 @@ const repo = "/esn-upm-website"
 
         <div id="lang-select-full">
             <p>Idioma</p>
-            <img src="/esn-upm-website/images/spain.png" alt="Español" height="25">
+            <div><Language /></div>
         </div>
 
         <a id="burger-mobile" >
@@ -46,9 +47,9 @@ const repo = "/esn-upm-website"
             <a href="https://esnupm.org/es/descuentos">Descuentos</a>
             <a href="https://esnupm.org/es/eventos">Eventos</a>
             <Button innerHtml="<p-btn><pink><i>¡</i></pink>Quiero ser <pink><i>voluntario!</i></pink></p-btn>" type="invert fixed-w" bgcolor="black" labelcolor="white" w="100px"/>
-            <div class="lang-select-full">
+            <div id="lang-select-mobile">
                 <p>Idioma</p>
-                <img src="/esn-upm-website/images/spain.png" alt="Español" height="25">
+                <Language />
             </div>
         </nav>
     </div>
@@ -152,6 +153,14 @@ const repo = "/esn-upm-website"
         align-items: center;
     }
 
+    #lang-select-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 10px;
+    }
+
     @media (min-width: 768px) {
 
         #esnLogo {
@@ -172,6 +181,11 @@ const repo = "/esn-upm-website"
 
         #lang-select-full {
             display: flex;
+        }
+
+        #lang-select-full div {
+            width: 65px;
+            height: 35px;
         }
 
     }
