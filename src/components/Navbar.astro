@@ -13,28 +13,46 @@ const repo = "/esn-upm-website"
     ))}
 </div>
 
-<nav class="nav">
-    
-    <img id="esnLogo" src="/esn-upm-website/images/esn-logo.png" alt="Logo ESN">
+<div style="display: flex; flex-direction: column;">
+    <nav class="top-nav">
+        
+        <img id="esnLogo" src="/esn-upm-website/images/esn-logo.png" alt="Logo ESN">
 
-    <div id="nav-full-link">
-        <a href="/">Home</a>
-        <a href="https://esnupm.org/es/firststeps">First Steps</a>
-        <a href="https://esnupm.org/es/esncard"><blue><i>ESN</i></blue>card</a>
-        <a href="https://esnupm.org/es/descuentos">Descuentos</a>
-        <a href="https://esnupm.org/es/eventos">Eventos</a>
-        <Button innerHtml="<p-btn><pink><i>¡</i></pink>Quiero ser <pink><i>voluntario!</i></pink></p-btn>" type="invert" bgcolor="black" labelcolor="white"/>
+        <div id="nav-full-link">
+            <a href="/">Home</a>
+            <a href="https://esnupm.org/es/firststeps">First Steps</a>
+            <a href="https://esnupm.org/es/esncard"><blue><i>ESN</i></blue>card</a>
+            <a href="https://esnupm.org/es/descuentos">Descuentos</a>
+            <a href="https://esnupm.org/es/eventos">Eventos</a>
+            <Button innerHtml="<p-btn><pink><i>¡</i></pink>Quiero ser <pink><i>voluntario!</i></pink></p-btn>" type="invert" bgcolor="black" labelcolor="white"/>
+        </div>
+
+        <div id="lang-select-full">
+            <p>Idioma</p>
+            <img src="/esn-upm-website/images/spain.png" alt="Español" height="25">
+        </div>
+
+        <a id="burger-mobile" >
+            <svg width="40" height="40"><use href="#hamburger" /></svg>
+        </a>
+    </nav>
+
+    <div style="display: flex; flex-direction: column;">
+        <span id="background-span"></span>
+        <nav class="side-nav">
+            <a href="/">Home</a>
+            <a href="https://esnupm.org/es/firststeps">First Steps</a>
+            <a href="https://esnupm.org/es/esncard"><blue><i>ESN</i></blue>card</a>
+            <a href="https://esnupm.org/es/descuentos">Descuentos</a>
+            <a href="https://esnupm.org/es/eventos">Eventos</a>
+            <Button innerHtml="<p-btn><pink><i>¡</i></pink>Quiero ser <pink><i>voluntario!</i></pink></p-btn>" type="invert fixed-w" bgcolor="black" labelcolor="white" w="100px"/>
+            <div class="lang-select-full">
+                <p>Idioma</p>
+                <img src="/esn-upm-website/images/spain.png" alt="Español" height="25">
+            </div>
+        </nav>
     </div>
-
-    <div id="lang-select-full">
-        <p>Idioma</p>
-        <img src="/esn-upm-website/images/spain.png" alt="Español" height="48">
-    </div>
-
-    <a id="lang-select-mobile" href="/es/">
-        <img src="/esn-upm-website/images/spain.png" alt="Español" height="40">
-    </a>
-</nav>
+</div>
 
 <!-- ------ Local style ------ -->
 
@@ -49,30 +67,80 @@ const repo = "/esn-upm-website"
         flex: 1;
     }
 
-    nav {
+    .top-nav {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
 
+        z-index: 1000;
+
         height: fit-content;
         padding: 0 10px;
 
         background-color: #ffffff;
-
-        box-shadow: 0 4px 30px 0px rgba(0, 0, 0, 0.8);
     }
-  
+
+    #background-span {
+        position: absolute;
+        height: 100vh;
+        width: 100%;
+
+        z-index: -2;
+
+        background-color: rgba(0, 0, 0, 0.5);
+
+        transition: opacity 0.25s ease;
+        transform: translateX(-200%);
+        opacity: 0;
+    }
+    
+    .side-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        z-index: -1;
+
+        height: 100%;
+        width: 50%;
+
+        padding-top: 40px;
+        gap: 50px;
+
+        background-color: #ffffff;
+
+        position: fixed;
+        right: 0;
+
+        box-shadow: 0 4px 40px 5px rgba(0, 0, 0, 0.8);
+
+        transition: all 0.5s ease;
+        transform: translateX(100%);
+
+    }
+
+    .side-nav a {
+        color: var(--primary-color);
+    }
+
+    svg {
+        transition: all 0.1s ease;
+    }
+
     #esnLogo {
-        width: 135px;
+        width: 130px;
     }
 
     #nav-full-link {
         display: none;
-        gap: 70px;
+        
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
     }
 
-    #lang-select-mobile {
+    #burger-mobile {
         display:contents;
     }
 
@@ -80,29 +148,30 @@ const repo = "/esn-upm-website"
         display: none;
         
         justify-content: space-between;
+        gap: 10px;
+        align-items: center;
     }
 
-    @media (min-width: 450px) {
+    @media (min-width: 768px) {
 
         #esnLogo {
-            width: 200px;
+            width: 160px;
         }
 
-        nav {
-            padding: 0 50px;
+        .top-nav {
+            padding: 0 clamp(0.625rem, -2.5rem + 6.25vw, 3.125rem); /* Padding 50px to 10px, VW 1440px to 800px */
         }
 
         #nav-full-link {
             display: flex;
-            align-items: center;
         }
 
-        #lang-select-mobile {
+        #burger-mobile {
             display: none;
         }
 
         #lang-select-full {
-            display: contents;
+            display: flex;
         }
 
     }
@@ -114,6 +183,38 @@ const repo = "/esn-upm-website"
     }
 
 </style>
+
+<script>
+
+    document.addEventListener('astro:page-load', () => {
+        const sideNav = document.querySelector<HTMLDivElement>('.side-nav');
+        const burger = document.querySelector('#burger-mobile');
+        const backgroundSpan = document.querySelector<HTMLSpanElement>('#background-span');
+
+        burger.addEventListener('click', () => {
+            sideNav.style.transform = sideNav.style.transform === 'translateX(100%)' ? 'translateX(0)' : 'translateX(100%)';
+            backgroundSpan.style.opacity = backgroundSpan.style.opacity === '0' ? '1' : '0';
+            backgroundSpan.style.transform = backgroundSpan.style.transform === 'translateX(-200%)' ? 'translateX(0)' : 'translateX(-200%)';
+        });
+
+        backgroundSpan.addEventListener('click', () => {
+            sideNav.style.transform = 'translateX(100%)';
+            backgroundSpan.style.opacity = '0';
+            backgroundSpan.style.transform = 'translateX(-200%)';
+        });
+
+    });
+
+</script>
+
+
+<svg width="0" height="0" style="display:none">
+    <symbol id="hamburger" viewBox="0 0 24 24">
+        <path xmlns="http://www.w3.org/2000/svg" d="M20 7L4 7" stroke="#1d1d1b" stroke-width="1.5" stroke-linecap="round"/>
+        <path xmlns="http://www.w3.org/2000/svg" opacity="0.5" d="M20 12L4 12" stroke="#3d3d3a" stroke-width="1.5" stroke-linecap="round"/>
+        <path xmlns="http://www.w3.org/2000/svg" d="M20 17L4 17" stroke="#1d1d1b" stroke-width="1.5" stroke-linecap="round"/>
+    </symbol>
+</svg>
 
 <!--
 <script>

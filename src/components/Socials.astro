@@ -29,7 +29,6 @@ const { size, styleGap } = Astro.props;
         box-sizing: border-box;
 
         width: 100%;
-        padding: 0 25px;
     }
 
     .big{
@@ -56,17 +55,17 @@ const { size, styleGap } = Astro.props;
         width: 40px;
     }
 
-    @media screen and (min-width: 636px) {
-        .container-socials {
-            padding: 0 150px;
-        }
-    }
-
     a:hover {
         transition: all 0.25s ease;
         transform: scale(1.2);
         fill: white;
         filter: drop-shadow(0 0 4px black);
+    }
+
+    @media (min-width: 768px) {
+        .container-socials {
+            padding: 0 25px;
+        }
     }
 
 </style>
