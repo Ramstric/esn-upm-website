@@ -23,12 +23,9 @@ import Socials from '../components/Socials.astro';
 			<img src="/esn-upm-website/images/hero-small-12.png" alt="ESN Madrid UPM">
 		</div>
 
-		<div class="hero-img">
-			<h1 id="short-title">ESN Madrid UPM</h1>
-		</div>
-
 		<div class="hero-description">
 			<img id="long-title" src="/esn-upm-website/images/hero-title.png" alt="ESN Madrid UPM">
+			<img id="short-title" src="/esn-upm-website/images/hero-title-center.png" alt="ESN Madrid UPM">
 
 			<p>
 				<blue>E</blue>rasmus <green>S</green>tudent <pink>N</pink>etwork <b>(<blue>E</blue><green>S</green><pink>N</pink>)</b> es una de las mayores asociaciones de estudiantes sin ánimo de lucro en Europa, fundada en 1989 para la ayuda y el desarrollo del intercambio de estudiantes. 
@@ -116,28 +113,27 @@ import Socials from '../components/Socials.astro';
 		justify-content: center;
 
 		width: 100%;
-		height: 660px;
 
 		background-color: var(--primary-color);
-	}
-
-	#short-title {
-		color: white;
+		
+		overflow: hidden;
 	}
 
 	.hero-grid {
-		display: none;
+		display: flex;
 		flex-wrap: wrap;
-		gap: clamp(0.625rem, -2.5rem + 4.348vw, 3.125rem);
-		width: 70%;
+		gap: 5px;
+		width: 120%;
+		justify-content: center;
 	}
 
 	.hero-grid img {
+		width: 80px;
 	}
 
 	.hero-img {
 		width: 100%;
-		height: 412px;
+		height: 340px;
 
 		background-image: url('/esn-upm-website/images/hero.png');
 		background-size: contain;
@@ -151,6 +147,10 @@ import Socials from '../components/Socials.astro';
 
 	#long-title {
 		display: none;
+	}
+
+	#short-title {
+		width: 100%;
 	}
 
 	#header-title {
@@ -171,8 +171,8 @@ import Socials from '../components/Socials.astro';
         box-sizing: border-box;
 
 		width: 100%;
-		height: 248px;
-		padding: 0 15px;
+		height: fit-content;
+		padding: 35px 15px;
 		gap: 25px;
 
 		text-align: center;
@@ -339,6 +339,14 @@ import Socials from '../components/Socials.astro';
 
 		.hero-grid {
 			display: inline-flex;
+			gap: clamp(0.625rem, -2.5rem + 4.348vw, 3.125rem);
+
+			width: 70%;
+			justify-content: left;
+		}
+
+		.hero-grid img {
+			width: auto;
 		}
 
 		#short-title {
