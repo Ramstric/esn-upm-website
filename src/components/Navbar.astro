@@ -201,9 +201,9 @@ const repo = "/esn-upm-website"
 <script>
 
     document.addEventListener('astro:page-load', () => {
-        const sideNav = document.querySelector<HTMLDivElement>('.side-nav');
-        const burger = document.querySelector('#burger-mobile');
-        const backgroundSpan = document.querySelector<HTMLSpanElement>('#background-span');
+        const sideNav = document.querySelector<HTMLDivElement>('.side-nav') as HTMLDivElement;
+        const burger = document.querySelector('#burger-mobile') as HTMLAnchorElement;
+        const backgroundSpan = document.querySelector<HTMLSpanElement>('#background-span') as HTMLSpanElement;
 
         burger.addEventListener('click', () => {
             sideNav.style.transform = sideNav.style.transform === 'translateX(100%)' ? 'translateX(0)' : 'translateX(100%)';
